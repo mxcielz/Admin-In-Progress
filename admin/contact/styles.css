@@ -1,0 +1,39 @@
+/* Estilos para a lista de mensagens */
+.message-list {
+    border: 3px solid var(--grey);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message-item {
+    
+    background: var(--light);
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.message-item:hover {
+    border: 3px solid var(--grey);
+    background: var(--light-blue);
+}
+
+.message-header {
+    
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.message-body {
+    
+    margin-top: 8px;
+    display: none; /* Inicialmente escondido */
+}
+
+.message-body strong {
+    display: block;
+    margin-bottom: 4px;
+}

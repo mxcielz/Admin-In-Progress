@@ -1,0 +1,209 @@
+
+    /* Loader Styles */
+    #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Garantir que o loader fique acima de outros elementos */
+        transition: opacity 0.5s ease, visibility 0s 0.5s; /* Transição suave para desaparecer */
+    }
+
+    .spinner {
+        border: 4px solid #f3f3f3; /* Cor de fundo */
+        border-top: 4px solid #3498db; /* Cor da animação */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    #content {
+        display: none; /* Esconde o conteúdo do site até que o loader termine */
+    }
+
+    /* Modificação para modo escuro */
+    body.dark #loader {
+        background: rgba(0, 0, 0, 0.9); /* Fundo mais escuro no modo escuro */
+    }
+
+    a {
+        color: inherit; /* Herda a cor do elemento pai, que pode ser a cor padrão do texto */
+        text-decoration: none; /* Remove o sublinhado padrão do link */
+    }
+
+    .hover-effect {
+        display: inline-flex;  /* Usa flexbox para alinhar conteúdo */
+        justify-content: center;  /* Centraliza horizontalmente */
+        align-items: center;  /* Centraliza verticalmente */
+        padding: 5px 10px;  /* Ajuste o padding para ter o tamanho certo */
+        text-decoration: none;
+        border-radius: 500px; /* Bordas arredondadas para o fundo */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-size: 14px;  /* Ajusta o tamanho do texto */
+        color: #333; /* Cor padrão para o texto */
+    }
+
+    .hover-effect:hover {
+        background-color: rgba(211, 211, 211, 0.5); /* Cor de fundo cinza mais visível ao passar o mouse */
+        transform: scale(1.05); /* Aumenta o efeito de escala ao passar o mouse */
+    }
+
+    .icon {
+        font-size: 20px; /* Tamanho do ícone */
+        color: #555; /* Cor padrão do ícone */
+    }
+
+    .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: var(--light);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+        margin-bottom: 20px;
+        font-family: var(--poppins);
+        color: var(--dark);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-family: var(--lato);
+        color: var(--dark);
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--grey);
+        border-radius: 5px;
+        font-family: var(--lato);
+        color: var(--dark);
+    }
+
+    .form-group input[type="submit"] {
+        background: var(--blue);
+        color: var(--light);
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .form-group input[type="submit"]:hover {
+        background: var(--green);
+    }
+/* Definição das cores para o tema */
+
+
+body.dark {
+	--light:rgb(0, 0, 0);
+	--grey: #060714;
+	--dark:rgb(255, 255, 255);
+}
+/* Estilos para o modo escuro */
+body.dark .form-container {
+    background: var(--060714); /* Cor de fundo escura */
+    color: var(--dark); /* Texto branco */
+}
+
+body.dark .form-container h2 {
+    color: var(--dark); /* Título em branco */
+}
+
+body.dark .form-group label {
+    color: var(--dark); /* Rótulos em branco */
+}
+
+body.dark .form-group input,
+body.dark .form-group select {
+    background: var(--grey); /* Fundo escuro para inputs e selects */
+    color: var(--dark); /* Texto branco nos campos */
+    border: 1px solid var(--dark); /* Borda branca para contrastar */
+}
+
+/* Estilo do botão de envio */
+body.dark .form-group input[type="submit"] {
+    background: var(--blue); /* Cor de fundo do botão */
+    color: var(--dark); /* Cor do texto do botão */
+    border: none; /* Remover borda */
+    padding: 10px 20px; /* Padding do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+}
+
+body.dark .form-group input[type="submit"]:hover {
+    background: var(--dark); /* Cor de fundo clara ao passar o mouse */
+    color: var(--dark); /* Cor do texto escura */
+}
+
+
+.profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 40px; /* Ajuste o tamanho da imagem */
+    height: 40px;
+    border-radius: 50%; /* Torna a imagem redonda */
+    border: 2px solid #ddd; /* Borda sutil */
+    transition: border-color 0.3s ease-in-out;
+}
+
+.profile img:hover {
+    border-color: #3498db; /* Borda azul ao passar o mouse */
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    top: 50px; /* Ajuste conforme necessário */
+    right: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    z-index: 1000;
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.profile-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background 0.3s ease-in-out;
+}
+
+.profile-menu ul li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
